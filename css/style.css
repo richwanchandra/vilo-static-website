@@ -1,0 +1,750 @@
+:root {
+    --vims-primary: #1a1e2e;
+    --vims-primary-light: #252a3a;
+    --vims-accent: #4f8cff;
+    --vims-accent-hover: #6da0ff;
+    --vims-accent-subtle: rgba(79, 140, 255, 0.08);
+    --vims-bg: #f4f6f9;
+    --vims-card: #ffffff;
+    --vims-border: #e2e6ed;
+    --vims-text: #2d3748;
+    --vims-text-light: #718096;
+    --vims-text-muted: #a0aec0;
+    --vims-success: #48bb78;
+    --vims-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+    --vims-shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.08);
+    --vims-radius: 8px;
+    --vims-transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --vims-dropdown-bg: #252a3a;
+    --vims-dropdown-text: #E6EAF2;
+    --vims-dropdown-hover-bg: rgba(255, 255, 255, 0.06);
+    --vims-submenu-bg: rgba(255, 255, 255, 0.04);
+    --vims-gold: #b88a44;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--vims-bg);
+    color: var(--vims-text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1,
+.vims-h1 {
+    font-family: 'Avenir Next', 'Avenir', 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    color: var(--vims-primary);
+    line-height: 1.3;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--vims-primary);
+}
+
+h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--vims-primary);
+}
+
+.vims-navbar {
+    background: transparent;
+    border-bottom: none;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease;
+}
+
+.vims-navbar.scrolled {
+    background: rgba(26, 30, 46, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.vims-mobile-topbar {
+    display: none;
+}
+
+.vims-navbar-inner {
+    display: flex;
+    align-items: center;
+    padding: 1rem 3rem;
+    overflow: visible;
+}
+
+.vims-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding-right: 2rem;
+    margin-right: 1rem;
+    border-right: none;
+}
+
+.vims-brand-logo {
+    height: 52px;
+    display: block;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.vims-menu {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    flex: 1;
+}
+
+.vims-nav-root {
+    position: relative;
+}
+
+.vims-nav-root>.vims-nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.85rem 1.1rem;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: var(--vims-transition);
+    border-bottom: 2px solid transparent;
+}
+
+.vims-nav-root>.vims-nav-link:hover,
+.vims-nav-root.active>.vims-nav-link {
+    color: #fff;
+    background: transparent;
+    border-bottom-color: var(--vims-accent);
+}
+
+.vims-main {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.vims-container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2.5rem;
+}
+
+@media (max-width: 768px) {
+    .vims-mobile-topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 1.5rem;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        transition: background-color 0.3s ease;
+    }
+
+    .vims-mobile-topbar.scrolled {
+        background: rgba(26, 30, 46, 0.95);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .vims-mobile-logo {
+        height: 36px;
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+    }
+
+    .vims-desktop-brand {
+        display: none !important;
+    }
+
+    .vims-hamburger {
+        display: block;
+        color: #fff;
+        font-size: 1.5rem;
+        background: none;
+        border: none;
+    }
+
+    .vims-navbar {
+        position: fixed;
+        top: 0;
+        left: -300px;
+        width: 300px;
+        height: 100vh;
+        background: var(--vims-card);
+        border-right: 1px solid var(--vims-border);
+        box-shadow: var(--vims-shadow-lg);
+        transition: left 0.3s ease;
+        z-index: 1001;
+        overflow-y: auto;
+    }
+
+    .vims-navbar.mobile-open {
+        left: 0;
+    }
+
+    .vims-navbar-inner {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .vims-nav-root>.vims-nav-link {
+        color: var(--vims-text);
+        padding: 0.85rem 1.25rem;
+        border-bottom: 1px solid var(--vims-border);
+        border-left: 3px solid transparent;
+    }
+
+    .vims-nav-root.active>.vims-nav-link {
+        color: var(--vims-accent);
+        border-left-color: var(--vims-accent);
+        background: var(--vims-accent-subtle);
+        border-bottom-color: var(--vims-border);
+    }
+}
+
+.vims-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+.vims-overlay.active {
+    display: block;
+}
+
+.vims-footer {
+    background: var(--vims-card);
+    border-top: 1px solid var(--vims-border);
+    padding: 4rem 0 3rem;
+    text-align: center;
+}
+
+.vims-footer-logo {
+    height: 60px;
+    width: auto;
+    margin-bottom: 2rem;
+    transition: var(--vims-transition);
+}
+
+.vims-footer-socials {
+    display: flex;
+    justify-content: center;
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+.vims-footer-socials a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    background: #0756a4;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 1.1rem;
+    transition: var(--vims-transition);
+    box-shadow: 0 4px 10px rgba(7, 86, 164, 0.2);
+    text-decoration: none;
+}
+
+.vims-footer-socials a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(7, 86, 164, 0.35);
+    background: #064583;
+    color: #fff;
+}
+
+.vims-footer-copy {
+    font-size: 0.85rem;
+    color: var(--vims-text-light);
+}
+
+.hero-section {
+    position: relative;
+    height: calc(100vh - 60px);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: var(--vims-primary);
+    color: #ffffff;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    transform: scale(1.05);
+    animation: heroKenBurns 20s ease-in-out forwards;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.2) 100%);
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    max-width: 800px;
+    padding: 2rem;
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 700ms ease, transform 700ms ease;
+}
+.hero-content.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hero-section .display-2 {
+    font-family: 'Avenir Next', 'Avenir', 'Montserrat', sans-serif;
+    font-size: 3.5rem;
+    color: #ffffff;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-section .lead {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-top: .5rem;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes heroKenBurns {
+    0%   { transform: scale(1.05); }
+    50%  { transform: scale(1.08); }
+    100% { transform: scale(1.1); }
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: .75rem 2rem;
+    border-radius: 999px;
+    text-decoration: none;
+    font-size: .95rem;
+    font-weight: 500;
+    transition: var(--vims-transition);
+}
+
+.btn--outline {
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(4px);
+}
+
+.btn--outline:hover {
+    background: #ffffff;
+    color: var(--vims-primary);
+}
+
+.article-slide {
+    padding: 4rem 0;
+    margin-bottom: 2rem;
+}
+
+.as-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.25fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.text-slider {
+    position: relative;
+    padding-right: 2rem;
+}
+
+.text-slide {
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    transition: opacity .5s ease;
+}
+
+.text-slide.is-active {
+    opacity: 1;
+    position: relative;
+    transform: translateY(0);
+}
+
+.badge {
+    font-size: .85rem;
+    font-weight: 700;
+    color: #0756a4;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.5rem;
+    display: block;
+    padding: 0;
+    background: transparent;
+}
+
+.text-slide h2 {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: var(--vims-primary);
+    margin-bottom: 1.2rem;
+    line-height: 1.1;
+}
+
+.muted {
+    color: var(--vims-text-light);
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+.image-slider-wrapper {
+    position: relative;
+}
+
+.image-slider {
+    position: relative;
+    aspect-ratio: 16/10;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.image-slide {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity .5s ease;
+}
+
+.image-slide.is-active {
+    opacity: 1;
+}
+
+.image-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 1rem;
+}
+
+.slider-dots .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #cbd5e1;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.slider-dots .dot.active {
+    background: #475569;
+}
+
+.vilo-stats {
+    padding: 2rem 0 4rem;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+.stat {
+    text-align: center;
+    padding: 1rem;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.stat.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.stat-number {
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--vims-gold);
+    margin-bottom: 0.5rem;
+    font-family: 'Avenir', 'Montserrat';
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: .85rem;
+    color: var(--vims-text-light);
+}
+
+@media(max-width:768px) {
+    .as-grid {
+        grid-template-columns: 1fr;
+    }
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.story-wrap {max-width:1100px;margin:0 auto}
+.title-section {text-align:center;margin:1.25rem 0 1.5rem}
+.title-section .serif-title {font-family:'Avenir Next','Avenir','Montserrat',sans-serif;font-size:2rem;color:var(--vims-primary)}
+.subtitle-top {letter-spacing:.2em;text-transform:uppercase;font-size:.7rem;color:var(--vims-text-light)}
+.story-slide {display:grid;grid-template-columns:1.1fr 1fr;gap:2rem;align-items:center;margin:1.25rem 0}
+.slide-title {font-family:'Avenir Next','Avenir','Montserrat',sans-serif;font-size:2rem;color:#111}
+.slide-title strong {font-weight:700}
+.slide-body {color:#333;line-height:1.8;max-width:560px}
+.slide-media {border:1px solid var(--vims-border);border-radius:10px;overflow:hidden}
+.slide-media img {display:block;width:100%;height:420px;object-fit:cover}
+.slide-nav {display:flex;gap:.5rem;margin-top:1rem}
+.slide-btn {width:42px;height:42px;border:1px solid #111;background:#fff;color:#111;border-radius:4px;display:inline-flex;align-items:center;justify-content:center;cursor:pointer}
+.slide-btn:hover {background:#111;color:#fff}
+.sr {position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+.story-hero {display:grid;grid-template-columns:1.2fr 1fr;gap:1.5rem;align-items:start;margin-bottom:1.75rem}
+.story-hero .hero-img {border-radius:12px;overflow:hidden;border:1px solid var(--vims-border)}
+.story-hero .hero-img img {width:100%;height:100%;object-fit:cover;display:block}
+.story-hero .hero-text {max-width:520px;margin:0 auto}
+.story-hero .hero-text p {color:var(--vims-text);line-height:1.85;margin:.6rem 0}
+.story-two {display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;align-items:start;margin:1.5rem 0}
+.story-two .text p {line-height:1.85;margin:.6rem 0}
+.story-two .img {border-radius:12px;overflow:hidden;border:1px solid var(--vims-border)}
+.story-two .img img {width:100%;height:380px;object-fit:cover;display:block}
+@media(max-width:900px){.story-hero{grid-template-columns:1fr}.story-two{grid-template-columns:1fr}}
+
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+.contact-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.contact-header h1 {
+    font-family: 'Avenir', 'Montserrat';
+    font-size: 2.5rem;
+    color: #1a1e2e;
+    margin-bottom: 0.75rem;
+}
+
+.contact-header p {
+    color: #718096;
+    font-size: 1rem;
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.contact-info-section h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1a1e2e;
+    margin-bottom: 1.5rem;
+}
+
+.contact-item {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+    align-items: flex-start;
+}
+
+.contact-icon {
+    width: 40px;
+    height: 40px;
+    background: #fef3e2;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.contact-icon i {
+    color: #d97706;
+    font-size: 1.1rem;
+}
+
+.contact-details h4 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #1a1e2e;
+    margin-bottom: 0.25rem;
+}
+
+.contact-details p,
+.contact-details a {
+    font-size: 0.9rem;
+    color: #718096;
+    margin: 0;
+    text-decoration: none;
+}
+
+.contact-details a:hover {
+    color: #0756a4;
+}
+
+.opening-hours {
+    background: #fef3e2;
+    border-radius: 12px;
+    padding: 1.25rem;
+    margin-top: 1.5rem;
+}
+
+.opening-hours h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1a1e2e;
+    margin-bottom: 0.75rem;
+}
+
+.opening-hours p {
+    font-size: 0.9rem;
+    color: #718096;
+    margin: 0.25rem 0;
+}
+
+.contact-form-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #1a1e2e;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    color: #1a1e2e;
+    background: #ffffff;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #0756a4;
+    box-shadow: 0 0 0 3px rgba(7, 86, 164, 0.1);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #a0aec0;
+}
+
+.form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.submit-btn {
+    width: 100%;
+    background: #d97706;
+    color: #ffffff;
+    border: none;
+    padding: 0.9rem 1.5rem;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.submit-btn:hover {
+    background: #b45309;
+}
+
+.submit-btn:active {
+    transform: scale(0.98);
+}
+
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    .contact-header h1 {
+        font-size: 2rem;
+    }
+}
+
+.px-3 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.lead {
+    color: var(--vims-text-light);
+}

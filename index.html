@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vilo Gelato - Internal Management System">
+    <title>Home - VIMS</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="vims-mobile-topbar" id="vims-mobile-topbar">
+        <a href="index.html" class="vims-brand-link" aria-label="Home">
+            <img src="images/logo.svg" alt="VILO" class="vims-mobile-logo">
+        </a>
+        <button class="vims-hamburger" id="vims-hamburger" aria-label="Toggle menu" title="Menu">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+
+    <nav class="vims-navbar" id="vims-navbar">
+        <div class="vims-navbar-inner">
+            <div class="vims-brand vims-desktop-brand">
+                <a href="index.html" class="vims-brand-link" aria-label="Home">
+                    <img src="images/logo.svg" alt="VILO" class="vims-brand-logo">
+                </a>
+            </div>
+
+            <div class="vims-menu">
+                <div class="vims-nav-root active">
+                    <a href="index.html" class="vims-nav-link">Home</a>
+                </div>
+                <div class="vims-nav-root">
+                    <a href="story.html" class="vims-nav-link">Vilo Story</a>
+                </div>
+                <div class="vims-nav-root">
+                    <a href="contact.html" class="vims-nav-link">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="vims-overlay" id="vims-overlay"></div>
+
+    <header class="hero-section">
+        <img src="images/Vilo1.avif" alt="Vilo Gelato Background" class="hero-bg">
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <h1 class="display-2">Vilo Gelato</h1>
+            <a href="#about" class="btn btn--outline">
+                Explore Our Internal
+            </a>
+        </div>
+    </header>
+
+    <div class="vims-main">
+        <div class="vims-container">
+            <section id="about" class="article-slide">
+                <div class="as-grid">
+                    <div class="text-slider" data-text-slider>
+                        <div class="text-slide is-active">
+                            <h6 class="badge">Value 01</h6>
+                            <h2>Value</h2>
+                            <p class="muted">
+Segala sesuatu yang kami lakukan harus memberikan nilai bagi pelanggan, karyawan, keluarga, pemangku kepentingan, dan masyarakat.
+                            </p>
+                        </div>
+
+                        <div class="text-slide">
+                            <h6 class="badge">Value 02</h6>
+                            <h2>Improvement</h2>
+                            <p class="muted">
+                                Kami berupaya untuk menjadi yang terbaik dalam apa yang kami lakukan
+                                dengan terus mengembangkan diri melalui riset, eksperimen, serta pengembangan yang didorong
+                                oleh teknologi.
+                            </p>
+                        </div>
+
+                        <div class="text-slide">
+                            <h6 class="badge">Value 03</h6>
+                            <h2>Lean and Agile</h2>
+                            <p class="muted">
+                                Tim yang kecil namun berperforma tinggi, dengan budaya kerja yang
+                                mendorong setiap anggota untuk berkembang dengan memberikan ruang untuk mencoba, melakukan
+                                kesalahan, dan belajar darinya
+                            </p>
+                        </div>
+
+                        <div class="text-slide">
+                            <h6 class="badge">Value 04</h6>
+                            <h2>Openness</h2>
+                            <p class="muted">
+                                Kami percaya bahwa keterbukaan itu penting karena sejalan dengan apa
+                                yang diinginkan dan diharapkan orang—agar mereka dapat merasakan rasa memiliki serta
+                                keterikatan emosional terhadap sebuah organisasi.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="image-slider-wrapper">
+                        <div class="image-slider" data-image-slider>
+                            <div class="image-slide is-active">
+                                <img src="images/Vilo1.1.avif">
+                            </div>
+
+                            <div class="image-slide">
+                                <img src="images/Vilo1.2.avif">
+                            </div>
+
+                            <div class="image-slide">
+                                <img src="images/Vilo1.3.avif">
+                            </div>
+
+                            <div class="image-slide">
+                                <img src="images/Vilo1.4.avif">
+                            </div>
+                        </div>
+
+                        <div class="slider-dots">
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="vilo-stats">
+                <div class="stats-grid">
+                    <div class="stat">
+                        <div class="stat-number"><span class="counter" data-target="37">0</span>+</div>
+                        <div class="stat-label">Cabang</div>
+                    </div>
+
+                    <div class="stat">
+                        <div class="stat-number"><span class="counter" data-target="300">0</span>+</div>
+                        <div class="stat-label">Varian Rasa</div>
+                    </div>
+
+                    <div class="stat">
+                        <div class="stat-number"><span class="counter" data-target="7">0</span>+</div>
+                        <div class="stat-label">Tahun Operasi</div>
+                    </div>
+
+                    <div class="stat">
+                        <div class="stat-number"><span class="counter" data-target="100">0</span>%</div>
+                        <div class="stat-label">Alami</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <footer class="vims-footer">
+        <div class="vims-main" style="padding: 0 2.5rem;">
+            <img src="images/logo.svg" class="vims-footer-logo" alt="Vilo Logo">
+            <div class="vims-footer-socials">
+                <a href="https://api.whatsapp.com/send/?phone=628161639999" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.instagram.com/vilogelato/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://tiktok.com/vilogelato" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.linkedin.com/company/vilo-gelato01/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <p class="vims-footer-copy">© 2026 Vilo Gelato. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vilo Story - VIMS">
+    <title>Vilo Story - VIMS</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="vims-mobile-topbar" id="vims-mobile-topbar">
+        <a href="index.html" class="vims-brand-link" aria-label="Home">
+            <img src="images/logo.svg" alt="VILO" class="vims-mobile-logo">
+        </a>
+        <button class="vims-hamburger" id="vims-hamburger" aria-label="Toggle menu" title="Menu">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+
+    <nav class="vims-navbar" id="vims-navbar">
+        <div class="vims-navbar-inner">
+            <div class="vims-brand vims-desktop-brand">
+                <a href="index.html" class="vims-brand-link" aria-label="Home">
+                    <img src="images/logo.svg" alt="VILO" class="vims-brand-logo">
+                </a>
+            </div>
+
+            <div class="vims-menu">
+                <div class="vims-nav-root">
+                    <a href="index.html" class="vims-nav-link">Home</a>
+                </div>
+                <div class="vims-nav-root active">
+                    <a href="story.html" class="vims-nav-link">Vilo Story</a>
+                </div>
+                <div class="vims-nav-root">
+                    <a href="contact.html" class="vims-nav-link">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="vims-overlay" id="vims-overlay"></div>
+
+    <div class="vims-main" style="padding-top: 100px;">
+        <div class="story-wrap">
+            <div class="title-section">
+                <p class="subtitle-top">Since 2017</p>
+                <h1 class="serif-title">The (his)Story</h1>
+                <p class="lead" style="max-width:640px;margin:0 auto;color:var(--vims-text-light)">Sejarah kehadiran serta filosofi di balik berdirinya Vilo Gelato.</p>
+            </div>
+
+            <div class="story-hero px-3">
+                <div class="hero-img"><img src="images/Vilo1.1.avif" alt="Vilo History"></div>
+                <div class="hero-text">
+                    <p>Vilo Gelato lahir di akhir tahun 2017 dari sebuah percakapan sederhana namun manis antara tiga sahabat SMA. Di suatu sore yang santai, mereka bertanya pada diri sendiri: <strong>Mengapa es krim yang enak selalu harus terlalu manis, terlalu mahal, dan hampir selalu produk impor?</strong></p>
+                    <p>Didorong oleh rasa penasaran, mereka menghabiskan liburan panjang di tahun itu dengan menyelami dunia pembuatan es krim. Bermodal resep YouTube dan semangat mencoba hal baru, mereka mulai bereksperimen di dapur sendiri.</p>
+                    <p>Hasilnya? <span style="color:var(--vims-text-light);font-style:italic">Belum layak untuk disajikan.</span></p>
+                </div>
+            </div>
+
+            <div class="story-two px-3">
+                <div class="text">
+                    <p>Setelah menguji ratusan resep dan melewati berbagai blind taste test, mereka akhirnya mulai menemukan formula gelato yang sempurna.</p>
+                    <p>Mereka segera menyadari bahwa teknik terbaik tidak akan berarti tanpa bahan baku terbaik. Petualangan baru dimulai—mencari bahan-bahan paling segar dan berkualitas dari dalam negeri.</p>
+                    <p>Di Vilo, itu berarti <strong>tanpa perisa buatan, tanpa pewarna, dan tanpa pengawet</strong>. Hanya bahan asli dan rasa yang jujur.</p>
+                    <p>Gelato dibuat dalam batch kecil setiap hari agar selalu segar.</p>
+                </div>
+                <div class="img"><img src="images/Vilo1.3.avif" alt="Workshop"></div>
+            </div>
+        </div>
+
+        <div class="px-3" id="vilo-story-carousel" aria-roledescription="carousel">
+            <div class="story-slide" data-index="0">
+                <div>
+                    <h2 class="slide-title">Lebih dari <strong>300</strong> Rasa</h2>
+                    <p class="slide-body">
+                        Karena kami belajar membuat gelato dari nol, kami jadi memahami seni (dan juga ilmu!) dalam menyeimbangkan setiap bahan dengan tepat.
+                        Dasar inilah yang memberi kami kebebasan untuk menciptakan hampir semua rasa yang bisa dibayangkan. Sejak tahun 2017, kami telah menciptakan lebih dari 300 varian rasa gelato—dan jumlahnya terus bertambah!
+                    </p>
+                    <div class="slide-nav">
+                        <button type="button" class="slide-btn" data-prev aria-label="Previous slide"><span class="sr">Previous</span>‹</button>
+                        <button type="button" class="slide-btn" data-next aria-label="Next slide"><span class="sr">Next</span>›</button>
+                    </div>
+                </div>
+                <div class="slide-media"><img src="images/Vilo1.1.avif" alt="Vilo flavours"></div>
+            </div>
+            <div class="story-slide" data-index="1" style="display:none">
+                <div>
+                    <h2 class="slide-title"><strong>37</strong> Outlets</h2>
+                    <p class="slide-body">
+                        Kami dengan bangga memiliki, mengelola, dan menjalankan 37 gerai yang tersebar di seluruh kepulauan Indonesia, menjadikan kami sebagai jaringan gelato lokal terbesar di tanah air.
+                        Dari sudut kota hingga destinasi pulau, selalu ada secangkir Vilo yang tidak pernah terlalu jauh dari Anda!
+                    </p>
+                    <div class="slide-nav">
+                        <button type="button" class="slide-btn" data-prev aria-label="Previous slide"><span class="sr">Previous</span>‹</button>
+                        <button type="button" class="slide-btn" data-next aria-label="Next slide"><span class="sr">Next</span>›</button>
+                    </div>
+                </div>
+                <div class="slide-media"><img src="images/Vilo1.2.avif" alt="Vilo outlets"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="vims-footer">
+        <div class="vims-main" style="padding: 0 2.5rem;">
+            <img src="images/logo.svg" class="vims-footer-logo" alt="Vilo Logo">
+            <div class="vims-footer-socials">
+                <a href="https://api.whatsapp.com/send/?phone=628161639999" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.instagram.com/vilogelato/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://tiktok.com/vilogelato" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.linkedin.com/company/vilo-gelato01/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <p class="vims-footer-copy">© 2026 Vilo Gelato. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

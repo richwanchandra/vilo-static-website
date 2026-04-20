@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Us - VIMS">
+    <title>Contact Us - VIMS</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="vims-mobile-topbar" id="vims-mobile-topbar">
+        <a href="index.html" class="vims-brand-link" aria-label="Home">
+            <img src="images/logo.svg" alt="VILO" class="vims-mobile-logo">
+        </a>
+        <button class="vims-hamburger" id="vims-hamburger" aria-label="Toggle menu" title="Menu">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+
+    <nav class="vims-navbar" id="vims-navbar">
+        <div class="vims-navbar-inner">
+            <div class="vims-brand vims-desktop-brand">
+                <a href="index.html" class="vims-brand-link" aria-label="Home">
+                    <img src="images/logo.svg" alt="VILO" class="vims-brand-logo">
+                </a>
+            </div>
+
+            <div class="vims-menu">
+                <div class="vims-nav-root">
+                    <a href="index.html" class="vims-nav-link">Home</a>
+                </div>
+                <div class="vims-nav-root">
+                    <a href="story.html" class="vims-nav-link">Vilo Story</a>
+                </div>
+                <div class="vims-nav-root active">
+                    <a href="contact.html" class="vims-nav-link">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="vims-overlay" id="vims-overlay"></div>
+
+    <div class="vims-main" style="padding-top: 100px;">
+        <div class="contact-container">
+            <div class="contact-header">
+                <h1>Get In Touch</h1>
+                <p>We'd love to hear from you. Whether you have a question or just want to say hello, drop us a message!</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-info-section">
+                    <h3>Visit Us</h3>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Our Location</h4>
+                            <p>Vilo Gelato Office<br>Jl. Wijaya X No.11, Melawai, Kec. Kebayoran<br>Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12160</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>WhatsApp</h4>
+                            <a href="https://wa.me/628121639999" target="_blank">+62 812 1639 999</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <a href="mailto:cs@vilogelato.com">cs@vilogelato.com</a>
+                        </div>
+                    </div>
+
+                    <div class="opening-hours">
+                        <h4>Opening Hours</h4>
+                        <p>Monday - Friday: 09:00 AM - 17:00 PM</p>
+                    </div>
+                </div>
+
+                <div class="contact-form-section">
+                    <div class="contact-form-card">
+                        <form action="#" method="POST">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" placeholder="Your name" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject" placeholder="How can we help?">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" placeholder="Tell us more..." required></textarea>
+                            </div>
+
+                            <button type="submit" class="submit-btn">
+                                Send Message
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="vims-footer">
+        <div class="vims-main" style="padding: 0 2.5rem;">
+            <img src="images/logo.svg" class="vims-footer-logo" alt="Vilo Logo">
+            <div class="vims-footer-socials">
+                <a href="https://api.whatsapp.com/send/?phone=628161639999" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.instagram.com/vilogelato/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://tiktok.com/vilogelato" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.linkedin.com/company/vilo-gelato01/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <p class="vims-footer-copy">© 2026 Vilo Gelato. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
