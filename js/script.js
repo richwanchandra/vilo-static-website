@@ -1,14 +1,20 @@
 document.addEventListener('DOMContentLoaded', function () {
     const navbar = document.getElementById('vims-navbar');
     const mobileTopbar = document.getElementById('vims-mobile-topbar');
+    const desktopLogo = document.querySelector('.vims-brand-logo');
+    const mobileLogo = document.querySelector('.vims-mobile-logo');
 
     window.addEventListener('scroll', function () {
         if (window.scrollY > 50) {
             navbar.classList.add('scrolled');
             if (mobileTopbar) mobileTopbar.classList.add('scrolled');
+            if (desktopLogo) desktopLogo.src = 'images/Logowhite.svg';
+            if (mobileLogo) mobileLogo.src = 'images/Logowhite.svg';
         } else {
             navbar.classList.remove('scrolled');
             if (mobileTopbar) mobileTopbar.classList.remove('scrolled');
+            if (desktopLogo) desktopLogo.src = 'images/logo.svg';
+            if (mobileLogo) mobileLogo.src = 'images/logo.svg';
         }
     });
 

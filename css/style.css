@@ -96,6 +96,7 @@ h3 {
 
 .vims-brand-logo {
     height: 52px;
+    width: auto;
     display: block;
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
 }
@@ -165,9 +166,10 @@ h3 {
     }
 
     .vims-mobile-logo {
-        height: 36px;
-        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-    }
+    height: 36px;
+    width: auto;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
 
     .vims-desktop-brand {
         display: none !important;
@@ -282,7 +284,7 @@ h3 {
 
 .hero-section {
     position: relative;
-    height: calc(100vh - 60px);
+    height: 100vh;
     width: 100%;
     display: flex;
     align-items: center;
