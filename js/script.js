@@ -8,13 +8,13 @@ document.addEventListener('DOMContentLoaded', function () {
         if (window.scrollY > 50) {
             navbar.classList.add('scrolled');
             if (mobileTopbar) mobileTopbar.classList.add('scrolled');
-            if (desktopLogo) desktopLogo.src = 'images/Logowhite.svg';
-            if (mobileLogo) mobileLogo.src = 'images/Logowhite.svg';
+            if (desktopLogo) desktopLogo.src = 'images/Logo Vilo PNG White.png';
+            if (mobileLogo) mobileLogo.src = 'images/Logo Vilo PNG White.png';
         } else {
             navbar.classList.remove('scrolled');
             if (mobileTopbar) mobileTopbar.classList.remove('scrolled');
-            if (desktopLogo) desktopLogo.src = 'images/logo.svg';
-            if (mobileLogo) mobileLogo.src = 'images/logo.svg';
+            if (desktopLogo) desktopLogo.src = 'images/Logo Vilo PNG.png';
+            if (mobileLogo) mobileLogo.src = 'images/Logo Vilo PNG.png';
         }
     });
 
@@ -38,6 +38,19 @@ document.addEventListener('DOMContentLoaded', function () {
     const heroContent = document.querySelector(".hero-content");
     if (heroContent) {
         requestAnimationFrame(() => heroContent.classList.add("show"));
+    }
+
+    // Hero Slider
+    const heroImages = document.querySelectorAll('.hero-section .hero-bg');
+    if (heroImages.length > 1) {
+        let currentHero = 0;
+        const totalHero = heroImages.length;
+        
+        setInterval(() => {
+            heroImages[currentHero].classList.remove('is-active');
+            currentHero = (currentHero + 1) % totalHero;
+            heroImages[currentHero].classList.add('is-active');
+        }, 5000);
     }
 
     const textSlides = document.querySelectorAll(".text-slide");
@@ -65,13 +78,13 @@ document.addEventListener('DOMContentLoaded', function () {
             goToSlide((current + 1) % total);
         }
 
-        slideInterval = setInterval(nextSlide, 4500);
+        slideInterval = setInterval(nextSlide, 5000);
 
         dots.forEach((dot, index) => {
             dot.addEventListener("click", () => {
                 clearInterval(slideInterval);
                 goToSlide(index);
-                slideInterval = setInterval(nextSlide, 4500);
+                slideInterval = setInterval(nextSlide, 5000);
             });
         });
 
@@ -138,5 +151,20 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
         render();
+    }
+
+    const expandBtn = document.getElementById('expand-outlets');
+    const outletsGrid = document.getElementById('outlets-grid');
+    if (expandBtn && outletsGrid) {
+        expandBtn.addEventListener('click', function() {
+            outletsGrid.classList.toggle('active');
+            const span = expandBtn.querySelector('span');
+            if (outletsGrid.classList.contains('active')) {
+                span.textContent = 'Hide Stores';
+                expandBtn.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            } else {
+                span.textContent = '37 Stores Across Indonesia';
+            }
+        });
     }
 });
